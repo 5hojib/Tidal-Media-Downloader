@@ -1,19 +1,21 @@
 #!/usr/bin/env python
-# -*- encoding: utf-8 -*-
-'''
+"""
 @File    :   settings.py
 @Time    :   2020/11/08
 @Author  :   Yaronzz
 @Version :   3.0
 @Contact :   yaronhuang@foxmail.com
 @Desc    :
-'''
+"""
+
+from __future__ import annotations
+
 import json
-import aigpy
 import base64
 
-from lang.language import *
+import aigpy
 from enums import *
+from lang.language import *
 
 
 class Settings(aigpy.model.ModelBase):
@@ -39,14 +41,14 @@ class Settings(aigpy.model.ModelBase):
     trackFileFormat = R"{TrackNumber} - {ArtistName} - {TrackTitle}{ExplicitFlag}"
     videoFileFormat = R"{VideoNumber} - {ArtistName} - {VideoTitle}{ExplicitFlag}"
 
-    def getDefaultPathFormat(self, type: Type):
+    def getDefaultPathFormat(self, type: Type) -> str:
         if type == Type.Album:
             return R"{ArtistName}/{Flag} {AlbumTitle} [{AlbumID}] [{AlbumYear}]"
-        elif type == Type.Playlist:
+        if type == Type.Playlist:
             return R"Playlist/{PlaylistName} [{PlaylistUUID}]"
-        elif type == Type.Track:
+        if type == Type.Track:
             return R"{TrackNumber} - {ArtistName} - {TrackTitle}{ExplicitFlag}"
-        elif type == Type.Video:
+        if type == Type.Video:
             return R"{VideoNumber} - {ArtistName} - {VideoTitle}{ExplicitFlag}"
         return ""
 
@@ -62,7 +64,7 @@ class Settings(aigpy.model.ModelBase):
                 return item
         return VideoQuality.P360
 
-    def read(self, path):
+    def read(self, path) -> None:
         self._path_ = path
         txt = aigpy.file.getContent(self._path_)
         if len(txt) > 0:
@@ -86,12 +88,12 @@ class Settings(aigpy.model.ModelBase):
 
         LANG.setLang(self.language)
 
-    def save(self):
+    def save(self) -> None:
         data = aigpy.model.modelToDict(self)
-        data['audioQuality'] = self.audioQuality.name
-        data['videoQuality'] = self.videoQuality.name
+        data["audioQuality"] = self.audioQuality.name
+        data["videoQuality"] = self.videoQuality.name
         txt = json.dumps(data)
-        aigpy.file.write(self._path_, txt, 'w+')
+        aigpy.file.write(self._path_, txt, "w+")
 
 
 class TokenSettings(aigpy.model.ModelBase):
@@ -102,29 +104,27 @@ class TokenSettings(aigpy.model.ModelBase):
     expiresAfter = 0
 
     def __encode__(self, string):
-        sw = bytes(string, 'utf-8')
-        st = base64.b64encode(sw)
-        return st
+        sw = bytes(string, "utf-8")
+        return base64.b64encode(sw)
 
     def __decode__(self, string):
         try:
             sr = base64.b64decode(string)
-            st = sr.decode()
-            return st
+            return sr.decode()
         except:
             return string
 
-    def read(self, path):
+    def read(self, path) -> None:
         self._path_ = path
         txt = aigpy.file.getContent(self._path_)
         if len(txt) > 0:
             data = json.loads(self.__decode__(txt))
             aigpy.model.dictToModel(data, self)
 
-    def save(self):
+    def save(self) -> None:
         data = aigpy.model.modelToDict(self)
         txt = json.dumps(data)
-        aigpy.file.write(self._path_, self.__encode__(txt), 'wb')
+        aigpy.file.write(self._path_, self.__encode__(txt), "wb")
 
 
 # Singleton

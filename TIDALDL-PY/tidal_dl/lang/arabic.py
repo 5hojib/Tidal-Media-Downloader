@@ -1,16 +1,17 @@
 #!/usr/bin/env python
-# -*- encoding: utf-8 -*-
-'''
+"""
 @File    :   arabic.py
 @Time    :   2020/08/19
 @Author  :   shhade for hack
 @Version :   1.0
-@Contact :   
-@Desc    :   
-'''
+@Contact :
+@Desc    :
+"""
+
+from __future__ import annotations
 
 
-class LangArabic(object):
+class LangArabic:
     SETTING = "الاعدادت"
     VALUE = "القيمة"
     SETTING_DOWNLOAD_PATH = "مجلد التحميل"
@@ -68,7 +69,9 @@ class LangArabic(object):
 
     CHANGE_START_SETTINGS = "بدء الاعدادات('0'-Return,'1'-Yes):"
     CHANGE_DOWNLOAD_PATH = "مجلد التنزيل('0' not modify):"
-    CHANGE_AUDIO_QUALITY = "دقة الصوت('0'-Normal,'1'-High,'2'-HiFi,'3'-Master,'4'-Max):"
+    CHANGE_AUDIO_QUALITY = (
+        "دقة الصوت('0'-Normal,'1'-High,'2'-HiFi,'3'-Master,'4'-Max):"
+    )
     CHANGE_VIDEO_QUALITY = "دقة الفديو(1080, 720, 480, 360):"
     CHANGE_ONLYM4A = "تحويل M4a الى mp4('0'-No,'1'-Yes):"
     CHANGE_ADD_EXPLICIT_TAG = "اضافة توقيع الفنان('0'-No,'1'-Yes):"
@@ -78,13 +81,23 @@ class LangArabic(object):
     CHANGE_CHECK_EXIST = "التحقق من وجود الملف قبل التحميل('0'-No,'1'-Yes):"
     CHANGE_ARTIST_BEFORE_TITLE = "اضف اسم الفنان قبل اسم الاغنية('0'-No,'1'-Yes):"
     CHANGE_INCLUDE_EP = "اضافة مسطلحات فردي او ثنائي الى الغنية('0'-No,'1'-Yes):"
-    CHANGE_ALBUMID_BEFORE_FOLDER = "اضف رقم التتبع قبل اسم مجلد الالبوم('0'-No,'1'-Yes):"
+    CHANGE_ALBUMID_BEFORE_FOLDER = (
+        "اضف رقم التتبع قبل اسم مجلد الالبوم('0'-No,'1'-Yes):"
+    )
     CHANGE_SAVE_COVERS = "حفظ صورة الالبوم('0'-No,'1'-Yes):"
     CHANGE_LANGUAGE = "اختر لغة"
-    CHANGE_ALBUM_FOLDER_FORMAT = "Album folder format('0'-not modify,'default'-to set default):"
-    CHANGE_PLAYLIST_FOLDER_FORMAT = "Playlist folder format('0'-not modify,'default'-to set default):"
-    CHANGE_TRACK_FILE_FORMAT = "Track file format('0'-not modify,'default'-to set default):"
-    CHANGE_VIDEO_FILE_FORMAT = "Video file format('0'-not modify,'default'-to set default):"
+    CHANGE_ALBUM_FOLDER_FORMAT = (
+        "Album folder format('0'-not modify,'default'-to set default):"
+    )
+    CHANGE_PLAYLIST_FOLDER_FORMAT = (
+        "Playlist folder format('0'-not modify,'default'-to set default):"
+    )
+    CHANGE_TRACK_FILE_FORMAT = (
+        "Track file format('0'-not modify,'default'-to set default):"
+    )
+    CHANGE_VIDEO_FILE_FORMAT = (
+        "Video file format('0'-not modify,'default'-to set default):"
+    )
     CHANGE_SHOW_PROGRESS = "Show progress('0'-No,'1'-Yes):"
     CHANGE_SHOW_TRACKINFO = "Show track info('0'-No,'1'-Yes):"
     CHANGE_SAVE_ALBUM_INFO = "Save AlbumInfo.txt('0'-No,'1'-Yes):"
@@ -92,7 +105,9 @@ class LangArabic(object):
     CHANGE_ADD_LYRICS = "Add lyrics('0'-No,'1'-Yes):"
     CHANGE_LYRICS_SERVER_PROXY = "Lyrics server proxy('0'-not modify):"
     CHANGE_ADD_LRC_FILE = "Save timed lyrics .lrc file ('0'-No,'1'-Yes):"
-    CHANGE_ADD_TYPE_FOLDER = "Add Type-Folder,eg Album/Video/Playlist('0'-No,'1'-Yes):"
+    CHANGE_ADD_TYPE_FOLDER = (
+        "Add Type-Folder,eg Album/Video/Playlist('0'-No,'1'-Yes):"
+    )
     CHANGE_MULITHREAD_DOWNLOAD = "Multi thread download('0'-No,'1'-Yes):"
     CHANGE_USE_DOWNLOAD_DELAY = "Use Download Delay('0'-No,'1'-Yes):"
 
@@ -114,13 +129,13 @@ class LangArabic(object):
     MODEL_ARTIST_PROPERTY = "ملكية الفنان"
     MODEL_PLAYLIST_PROPERTY = "ملكية قائمة الاغاني"
 
-    MODEL_TITLE = 'الاسم'
-    MODEL_TRACK_NUMBER = 'رقم الاغنية'
-    MODEL_VIDEO_NUMBER = 'رقم الفديو'
-    MODEL_RELEASE_DATE = 'عام الاصدار'
-    MODEL_VERSION = 'الاصدار'
-    MODEL_EXPLICIT = 'توقيع الفنان'
-    MODEL_ALBUM = 'الالبوم'
-    MODEL_ID = 'رقم التتبع'
-    MODEL_NAME = 'الاسم'
-    MODEL_TYPE = 'النوع'
+    MODEL_TITLE = "الاسم"
+    MODEL_TRACK_NUMBER = "رقم الاغنية"
+    MODEL_VIDEO_NUMBER = "رقم الفديو"
+    MODEL_RELEASE_DATE = "عام الاصدار"
+    MODEL_VERSION = "الاصدار"
+    MODEL_EXPLICIT = "توقيع الفنان"
+    MODEL_ALBUM = "الالبوم"
+    MODEL_ID = "رقم التتبع"
+    MODEL_NAME = "الاسم"
+    MODEL_TYPE = "النوع"

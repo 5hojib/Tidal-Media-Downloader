@@ -1,13 +1,15 @@
 #!/usr/bin/env python
-# -*- encoding: utf-8 -*-
-'''
+"""
 @File    :   enums.py
 @Time    :   2020/08/08
 @Author  :   Yaronzz
 @Version :   3.0
 @Contact :   yaronhuang@foxmail.com
-@Desc    :   
-'''
+@Desc    :
+"""
+
+from __future__ import annotations
+
 from enum import Enum
 
 

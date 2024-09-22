@@ -1,16 +1,17 @@
 #!/usr/bin/env python
-# -*- encoding: utf-8 -*-
-'''
+"""
 @File    :   korean.py
 @Time    :   2021/11/24
 @Author  :   jee019
 @Version :   1.1
 @Contact :   qwer010910@gmail.com
-@Desc    :   
-'''
+@Desc    :
+"""
+
+from __future__ import annotations
 
 
-class LangKorean(object):
+class LangKorean:
     SETTING = "설정"
     VALUE = "값"
     SETTING_DOWNLOAD_PATH = "다운로드 경로"
@@ -76,15 +77,25 @@ class LangKorean(object):
     CHANGE_ADD_YEAR = "앨범 폴더 이름에 연도 추가('0'-아니요,'1'-예):"
     CHANGE_USE_TRACK_NUM = "파일 이름 앞에 트랙 번호 추가('0'-아니요,'1'-예):"
     CHANGE_CHECK_EXIST = "다운로드 트랙 전에 존재하는 파일 확인('0'-아니요,'1'-예):"
-    CHANGE_ARTIST_BEFORE_TITLE = "트랙 제목 앞에 아티스트 이름 추가('0'-아니요,'1'-예):"
-    CHANGE_INCLUDE_EP = "아티스트 앨범 다운로드시 싱글 및 EP 포함('0'-아니요,'1'-예):"
+    CHANGE_ARTIST_BEFORE_TITLE = (
+        "트랙 제목 앞에 아티스트 이름 추가('0'-아니요,'1'-예):"
+    )
+    CHANGE_INCLUDE_EP = (
+        "아티스트 앨범 다운로드시 싱글 및 EP 포함('0'-아니요,'1'-예):"
+    )
     CHANGE_ALBUMID_BEFORE_FOLDER = "앨범 폴더 앞에 ID 추가('0'-아니요,'1'-예):"
     CHANGE_SAVE_COVERS = "커버 저장('0'-아니요,'1'-예):"
     CHANGE_LANGUAGE = "언어 선택"
-    CHANGE_ALBUM_FOLDER_FORMAT = "앨범 폴더 형식('0'-변경 안 함,'default'-기본 설정):"
-    CHANGE_PLAYLIST_FOLDER_FORMAT = "Playlist folder format('0'-not modify,'default'-to set default):"
+    CHANGE_ALBUM_FOLDER_FORMAT = (
+        "앨범 폴더 형식('0'-변경 안 함,'default'-기본 설정):"
+    )
+    CHANGE_PLAYLIST_FOLDER_FORMAT = (
+        "Playlist folder format('0'-not modify,'default'-to set default):"
+    )
     CHANGE_TRACK_FILE_FORMAT = "트랙 파일 형식('0'-변경 안 함,'default'-기본 설정):"
-    CHANGE_VIDEO_FILE_FORMAT = "Video file format('0'-not modify,'default'-to set default):"
+    CHANGE_VIDEO_FILE_FORMAT = (
+        "Video file format('0'-not modify,'default'-to set default):"
+    )
     CHANGE_SHOW_PROGRESS = "진행 상태 표시('0'-아니요,'1'-예):"
     CHANGE_SHOW_TRACKINFO = "트랙 정보 표시('0'-아니요,'1'-예):"
     CHANGE_SAVE_ALBUM_INFO = "AlbumInfo.txt 저장('0'-아니요,'1'-예):"
@@ -92,7 +103,9 @@ class LangKorean(object):
     CHANGE_ADD_LYRICS = "가사 추가('0'-아니요,'1'-예):"
     CHANGE_LYRICS_SERVER_PROXY = "가사 서버 프록시('0'-변경 안 함):"
     CHANGE_ADD_LRC_FILE = "timed 가사 .lrc 파일 저장 ('0'-아니요,'1'-예):"
-    CHANGE_ADD_TYPE_FOLDER = "Add Type-Folder,eg Album/Video/Playlist('0'-No,'1'-Yes):"
+    CHANGE_ADD_TYPE_FOLDER = (
+        "Add Type-Folder,eg Album/Video/Playlist('0'-No,'1'-Yes):"
+    )
     CHANGE_MULITHREAD_DOWNLOAD = "Multi thread download('0'-No,'1'-Yes):"
     CHANGE_USE_DOWNLOAD_DELAY = "Use Download Delay('0'-No,'1'-Yes):"
 
@@ -114,13 +127,13 @@ class LangKorean(object):
     MODEL_ARTIST_PROPERTY = "아티스트-정보"
     MODEL_PLAYLIST_PROPERTY = "재생목록-정보"
 
-    MODEL_TITLE = '제목'
-    MODEL_TRACK_NUMBER = '트랙 넘버'
-    MODEL_VIDEO_NUMBER = '영상 넘버'
-    MODEL_RELEASE_DATE = '발매일'
-    MODEL_VERSION = '버전'
-    MODEL_EXPLICIT = 'Explicit'
-    MODEL_ALBUM = '앨범'
-    MODEL_ID = '아이디'
-    MODEL_NAME = '이름'
-    MODEL_TYPE = '형식'
+    MODEL_TITLE = "제목"
+    MODEL_TRACK_NUMBER = "트랙 넘버"
+    MODEL_VIDEO_NUMBER = "영상 넘버"
+    MODEL_RELEASE_DATE = "발매일"
+    MODEL_VERSION = "버전"
+    MODEL_EXPLICIT = "Explicit"
+    MODEL_ALBUM = "앨범"
+    MODEL_ID = "아이디"
+    MODEL_NAME = "이름"
+    MODEL_TYPE = "형식"
